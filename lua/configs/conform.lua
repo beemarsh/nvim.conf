@@ -24,13 +24,6 @@ local options = {
       objcpp = { "clang-format" },
 
   },
- format_on_save = {
-      timeout_ms = 500,  -- Maximum time to wait for a formatter to finish
-      lsp_fallback = true, -- Use LSP formatting if no conform formatter is found
-      async = false, -- Run synchronously on save, so it doesn't leave undo history changes behind
-      -- Note: async = true is generally better for responsiveness, but can sometimes cause
-      -- small undo history quirks. Test and see what you prefer.
-    },
 }
 
 return options
