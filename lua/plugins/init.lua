@@ -12,7 +12,11 @@ return {
       require "configs.lspconfig"
     end,
   },
-
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+  }
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
