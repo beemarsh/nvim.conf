@@ -47,6 +47,58 @@ Most formatters can be installed easily using **`Mason.nvim`** directly within N
 
 ---
 
+
+## 💡 Language Server Protocol (LSP) Setup
+
+This configuration uses the **Language Server Protocol (LSP)** to provide advanced code intelligence features such as auto-completion, go-to-definition, symbol renaming, and diagnostics. LSP servers are managed and installed via **`Mason.nvim`**.
+
+### Configured LSP Servers
+
+| Language/Filetype           | LSP Server(s) Used                                |
+| :-------------------------- | :------------------------------------------------ |
+| **Python** | `pyright`, `ruff`                                 |
+| **C/C++/Objective-C** | `clangd`                                          |
+| **Bash** | `bashls` (*bash-language-server*)                                          |
+| **JavaScript/TypeScript** | `ts_ls` (*typescript-language-server*)                                          |
+| **HTML/CSS/JSON/Lua** | *Pre-configured by NvChad* |
+
+### Installing LSP Servers
+
+Just like formatters, most LSP servers can be installed through **`Mason.nvim`**:
+
+1.  **Open Neovim:** `nvim`
+2.  **Open Mason:** Type `:Mason` and press Enter.
+3.  **Search and Install:** Find the LSP servers listed above (e.g., `pyright`, `ruff`, `clangd`, `bashls`, `ts_ls`) and press `i` to install them.
+
+---
+
+## ⌨️ Keybindings
+
+This section outlines the primary keybindings configured in this setup for efficient navigation, LSP features, and diagnostic viewing.
+
+### LSP Keybindings
+
+| Keybinding       | Description                 |
+| :--------------- | :-------------------------- |
+| `gd`             | Go to Definition            |
+| `gD`             | Go to Declaration           |
+| `gr`             | Go to References            |
+| `gi`             | Go to Implementation        |
+| `K`              | Hover Documentation         |
+
+### Diagnostics & Trouble.nvim Keybindings
+
+This setup uses `Trouble.nvim` for a better, more unified diagnostic and list experience.
+
+| Keybinding       | Description                                              |
+| :--------------- | :------------------------------------------------------- |
+| `[d`             | Jump to Previous Diagnostic                              |
+| `]d`             | Jump to Next Diagnostic                                  |
+| `<C-o>D`         | Toggle all diagnostics in a unified view (Trouble)       |
+| `<C-o>d`         | Toggle diagnostics for the current buffer only (Trouble) |
+
+---
+
 ## 🤝 Credits
 
 * **[NvChad](https://github.com/NvChad/NvChad)**: The core Neovim framework this configuration is built upon.
@@ -55,3 +107,4 @@ Most formatters can be installed easily using **`Mason.nvim`** directly within N
 * **[lazy.nvim](https://github.com/folke/lazy.nvim)**: The fantastic plugin manager.
 * **[conform.nvim](https://github.com/stevearc/conform.nvim)**: The plugin used for code formatting.
 * **[Mason.nvim](https://github.com/williamboman/mason.nvim)**: The essential plugin for managing LSP servers, formatters, and debuggers.
+* **[Trouble.nvim](https://github.com/folke/trouble.nvim)**: For enhanced diagnostic and list views.
