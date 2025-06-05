@@ -9,6 +9,9 @@ map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
+-- Quit
+map("n", "<leader>qq", "<cmd>qa<cr>", {desc = "Quit all"})
+
 -- ALT+f triggers manual formatting
 map({ "n", "v", "i" }, "<M-f>", function()
   vim.lsp.buf.format({ async = true })
@@ -39,3 +42,17 @@ map('n', '<C-o>d', '<cmd>Trouble diagnostics toggle filter.buf=0<cr>', { desc = 
 -- map('n', '<leader>cl', '<cmd>Trouble lsp toggle focus=false win.position=right<cr>', { desc = "LSP Definitions / references / ... (Trouble)" })
 -- map('n', '<leader>xL', '<cmd>Trouble loclist toggle<cr>', { desc = "Location List (Trouble)" })
 -- map('n', '<leader>xQ', '<cmd>Trouble qflist toggle<cr>', { desc = "Quickfix List (Trouble)" })
+--
+
+-- Terminal Mappings
+map({ "n", "t" }, "<M-Enter>", function()
+  require("nvchad.term").toggle {
+    pos = "float", -- This makes it a floating window
+    size = 0.9,    -- Adjust size (e.g., 60% of screen width/height)
+    width = 1,   -- You can specify width/height directly or via size
+    height = 1,
+    -- You can add an 'id' if you want to manage multiple floating terminals
+    -- id = "my_floating_term",
+  }
+end, { desc = "Toggle Floating Terminal (Ctrl+Enter)" })
+
